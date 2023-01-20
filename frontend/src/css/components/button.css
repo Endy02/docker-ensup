@@ -1,0 +1,204 @@
+.btn{
+    width: max-content;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Roboto bold';
+    border: none;
+    text-decoration: none;
+    box-shadow: var(--bottom-shadow);
+    cursor: pointer;
+}
+.btn-default{
+    border-radius: 50px;
+}
+.btn-bordered{
+    border-radius: 10px;
+}
+.btn-large{
+    padding: 13px 30px;
+    font-size: var(--large-text);
+}
+.btn-medium{
+    padding: 6px 18px;
+    font-size: var(--medium-text);
+}
+.btn-small{
+    padding: 4px 15px;
+    font-size: var(--small-text);
+}
+
+.btn-current{
+    background-color: var(--cute-green);
+    color: var(--regular-white);
+    transition: all .2s ease-out;
+}
+.btn-current:hover,
+.btn-current:focus{
+    background-color: var(--fun-blue);
+    transition: all .2s ease-in-out;
+}
+.btn-great{
+    background-color: var(--cute-green);
+    color: var(--regular-white);
+    transition: all .2s ease-out;
+}
+.btn-great:hover,
+.btn-great:focus{
+    background-color: var(--opac-brown);
+    transition: all .2s ease-in;
+}
+
+.btn-cream{
+    background-color: var(--weezy-sand);
+    color: var(--regular-white);
+    transition: all .2s ease-out;
+}
+.btn-cream:hover,
+.btn-cream:focus{
+    background-color: var(--sweat-violet);
+    transition: all .2s ease-in-out;
+}
+.btn-swift{
+    background-color: var(--sweat-violet);
+    color: var(--regular-white);
+    transition: all .2s ease-out;
+}
+.btn-swift:hover,
+.btn-swift:focus{
+    background-color: var(--fun-blue);
+    transition: all .2s ease-in-out;
+}
+.btn-danger{
+    background-color: var(--danger-red);
+    color: var(--regular-white);
+    transition: all .2s ease-out;
+}
+.btn-danger:hover,
+.btn-danger:focus{
+    background-color: var(--cream-orange);
+    transition: all .2s ease-in-out;
+}
+.basic-link{
+    font-size: var(--medium-text);
+    font-family: 'Roboto medium';
+    text-align: center;
+    padding: 5px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.basic-link-current{
+    color: var(--sweat-pink);
+    transition: all .2s ease-out;
+}
+.basic-link-current:hover{
+    background-color: var(--cute-green);
+    color: var(--regular-white);
+    transition: all .2s ease-in;
+}
+.basic-link-great{
+    color: var(--cute-green);
+    transition: all .2s ease-out;
+}
+.basic-link-great:hover{
+    background-color: var(--opac-brown);
+    color: var(--regular-white);
+    transition: all .2s ease-in;
+}
+.link{
+    text-decoration: none;
+    font-size: var(--medium-text);
+    font-weight: 700;
+    letter-spacing: .5px;
+    transition: all .2s ease-out;
+    cursor: pointer;
+}
+.link-medium{
+    text-decoration: none;
+    font-size: var(--large-text);
+    font-weight: 700;
+    letter-spacing: .5px;
+    transition: all .2s ease-out;
+    cursor: pointer;
+}
+.link-current{
+    color: var(--sweat-pink);
+    transition: all .2s ease-out;
+}
+.link-current:hover,
+.link-current:focus{
+    color: var(--cute-green);
+    transition: all .2s ease-in;
+}
+.link-great{
+    color: var(--cute-green);
+    transition: all .2s ease-out;
+}
+.link-great:hover,
+.link-great:focus{
+    color: var(--opac-brown);
+    transition: all .2s ease-in;
+}
+.link-cream{
+    color: var(--cream-orange);
+    transition: all .2s ease-out;
+}
+.link-cream:hover,
+.link-cream:focus{
+    color: var(--lazy-grey);
+    transition: all .2s ease-in;
+}
+.link-glow{
+    color: var(--regular-white);
+    transition: all .2s ease-out;
+}
+.link-glow:hover,
+.link-glow:focus{
+    color: var(--cute-green);
+    transition: all .2s ease-in;
+}
+.icon-link{
+    cursor: pointer;
+}
+.icon-link-small{
+    width: 4vh;
+}
+.icon-link-medium{
+    width: 8vh;
+}
+.icon-link-current{
+    fill: var(--regular-white);
+    transition: all .2s ease-out;
+}
+.icon-link-current:hover{
+    fill: var(--cute-green);
+    transition: all .2s ease-in;
+}
+.icon-link-great{
+    fill: var(--cream-orange);
+    transition: all .2s ease-out;
+}
+.icon-link-great:hover,
+.icon-link-great:focus{
+    fill: var(--fun-blue);
+    transition: all .2s ease-in;
+}
+.back-link{
+    width: 5vh;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fun-brown);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s ease-out;
+}
+.back-link:hover{
+    background-color: var(--cute-green);
+    transition: all .2s ease-in;
+}
+.back-link > img{
+    height: 90%;
+}

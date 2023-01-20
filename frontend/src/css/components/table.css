@@ -1,0 +1,29 @@
+.table-base{
+    width: 60%;
+    margin: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+}
+.table-r-base{
+    width: 30%;
+    margin: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+}
+.t-head{
+    background-color: var(--cream-orange);
+}
+.t-head td{
+   padding: 15px 20px;
+   color: var(--regular-white);
+   font-size: var(--medium-text);
+   font-weight: 700;
+}
+
+.t-body td{
+    background-color: #FBFBFB;
+    padding: 15px 20px;
+    color: var(--lazy-grey);
+}

@@ -1,0 +1,65 @@
+.contact-form{
+    width: 70%
+}
+.contact-form-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.input{
+    border: none;
+    outline: none;
+    padding: 10px 8px;
+    box-shadow: var(--bottom-shadow);
+}
+.input-small{
+    width: 18vh;
+    font-family: 'Roboto Bold';
+    font-size: var(--large-text);
+} 
+.input-medium{
+    width: 25vh;
+    font-family: 'Roboto Bold';
+    font-size: var(--large-text);
+}
+.input-large{
+    width: 45vh;
+    font-family: 'Roboto Bold';
+    font-size: var(--medium-text);
+}
+.input-text{
+    border-radius: 10px;
+}
+.input-number{
+    border-radius: 10px;
+}
+.input-textarea{
+    border-radius: 10px;
+} 
+.input-orange{
+    color: var(--lazy-grey);
+    border: 3.5px solid var(--cream-orange);
+}
+.step-form{
+    width: 190vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 960px) {
+    .input-medium{
+        width: 100%;
+        font-family: 'Roboto Bold';
+        font-size: var(--large-text);
+    }
+    .input-large{
+        width: 100%;
+        font-family: 'Roboto Bold';
+        font-size: var(--medium-text);
+    }
+}

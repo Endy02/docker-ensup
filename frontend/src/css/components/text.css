@@ -1,0 +1,63 @@
+.regular-text{
+    font-family: 'Roboto regular';
+}
+.bold-text{
+    font-family: 'Roboto bold';
+}
+.light-text{
+    font-family: 'Roboto light';
+}
+.thin-text{
+    font-family: 'Roboto thin';
+}
+.small-text{
+    font-size: var(--small-text);
+}
+.medium-text{
+    font-size: var(--medium-text);
+}
+.large-text{
+    font-size: var(--large-text);
+}
+.big-text{
+    font-size: var(--big-text);
+}
+.white-text{
+    color: var(--regular-white);
+}
+.dark-text{
+    color: var(--dark-black);
+}
+.red-text{
+    color: var(--danger-red);
+}
+.sand-text{
+    color: var(--weezy-sand);
+}
+.violet-text{
+    color: var(--sweat-violet);
+}
+.grey-text{
+    color: var(--dark-grey);
+}
+.black-text{
+    color: var(--lazy-grey);
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.crossed-text{
+    text-decoration: line-through;
+}
+.home-title{
+    font-family: 'Roboto Bold';
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-shadow: var(--bottom-shadow);
+}
+.ls-medium{
+    letter-spacing: 1px;
+}
+.center{
+    text-align: center;
+}
