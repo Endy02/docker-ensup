@@ -1,63 +1,54 @@
-import React from 'react'
-// import { Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
-// import axiosProvider from '../../core/axios';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React, { useRef, useState, useEffect } from 'react'
+import { Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import axiosProvider from '../../core/axios';
 
-// const LOGIN_URL = 'user/login/';
+const LOGIN_URL = 'user/login';
 
 const Login = () => {
-    // const userRef = useRef();
-    // const errRef = useRef();
-    // const navigate = useNavigate()
-    // const location = useLocation()
+    const userRef = useRef();
+    const errRef = useRef();
+    const navigate = useNavigate()
+    const location = useLocation()
 
-    // const [user, setUser] = useState('');
-    // const [pwd, setPwd] = useState('');
-    // const [errMsg, setErrMsg] = useState('');
-    // const [success, setSucces] = useState(false);
+    const [mail, setMail] = useState('');
+    const [pwd, setPwd] = useState('');
+    const [errMsg, setErrMsg] = useState('');
+    const [success, setSucces] = useState(false);
 
-    // useEffect(() => {
-    //     userRef.current.focus();
-    // }, [])
+    useEffect(() => {
+        setErrMsg('')
+    }, [mail, pwd])
 
-    // useEffect(() => {
-    //     setErrMsg('')
-    // }, [user, pwd])
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axiosProvider.post(LOGIN_URL,
+                JSON.stringify({
+                    username: mail,
+                    password: pwd
+                }),{
+                    xsrfHeaderName: 'X-CSRFTOKEN',
+                    xsrfCookieName: 'csrftoken',
+                })
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
+            localStorage.setItem("user", {username: response.data.mail})
 
-    //     try {
-    //         const response = await axiosProvider.post(LOGIN_URL,
-    //             JSON.stringify({
-    //                 email: user,
-    //                 password: pwd
-    //             }),{
-    //                 xsrfHeaderName: 'X-CSRFTOKEN',
-    //                 xsrfCookieName: 'csrftoken',
-    //             })
-    //         localStorage.setItem("access_token", response.data.access)
-    //         localStorage.setItem("refresh_token", response.data.refresh)
-    //         axiosProvider.defaults.headers['Authorization'] = 'JWT ' + localStorage.getItem("access_token")
-
-    //         setUser('')
-    //         setPwd('')
-    //         setSucces(true);
-    //         navigate('/', {state:{prevUrl: location.pathname}})
-    //     } catch (err) {
-    //         if (!err?.response) {
-    //             setErrMsg('No Server Response')
-    //         } else if (err.response?.status === 400) {
-    //             setErrMsg('Missing username or Password');
-    //         } else if (err.response?.status === 401) {
-    //             setErrMsg('Unauthorized')
-    //         } else {
-    //             setErrMsg('Login Failed')
-    //         }
-    //         errRef.current.focus();
-    //     }
-    // }
+            setMail('')
+            setPwd('')
+            setSucces(true);
+            navigate('/', {state:{prevUrl: location.pathname}})
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response')
+            } else if (err.response?.status === 500) {
+                setErrMsg('Missing username or Password');
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized')
+            } else {
+                setErrMsg('Login Failed')
+            }
+        }
+    }
 
     return (
         <>
@@ -131,14 +122,13 @@ const Login = () => {
                                 </svg>
                             </div>
                             <div className='separator'></div>
-                            <form className='contact-form pad-b-xl'>
+                            <form className='contact-form pad-b-xl' onSubmit={handleSubmit} >
                                 <div className='contact-form-item'>
-                                    <input type='email' className='input input-medium input-text input-border-orange' placeholder='Email'/>
+                                    <input type='text' onChange={(e) => {setMail(e.target.value)}} ref={userRef} className='input input-medium input-text input-border-orange' placeholder='Username' required/>
                                 </div>
                                 <div className='contact-form-item'>
-                                    <input type='password' className='input input-medium input-text input-border-orange' placeholder='Mot de passe'/>
+                                    <input type='password' onChange={(e) => {setPwd(e.target.value)}} ref={userRef} className='input input-medium input-text input-border-orange' placeholder='Mot de passe' required/>
                                 </div>
-                                
                                 <div className='contact-form-item flex-col-center'>
                                     <button type='submit' className='btn btn-bordered btn-large btn-swift'>Connexion</button> 
                                 </div>
