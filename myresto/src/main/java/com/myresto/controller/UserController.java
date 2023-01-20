@@ -49,6 +49,6 @@ public class UserController {
 	
 	@PostMapping("/user/login")
 	public User login(@RequestBody User u) throws Exception {
-		return UserService.login(u.getMail(), u.getPassword());
+		return UserService.login(u.getUsername(), u.getPassword());
 	}
 }

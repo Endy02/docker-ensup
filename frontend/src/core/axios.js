@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const baseUrl = 'http://localhost:8000/api/';
+const baseUrl = 'http://localhost:8000/';
 
 const axiosProvider = axios.create({
     baseURL: baseUrl,
     headers : {
-        Authorization: localStorage.getItem("access_token") ? 'JWT ' + localStorage.getItem("access_token") : null,
         'Content-type': 'application/json',
         accept: 'application/json',
     }

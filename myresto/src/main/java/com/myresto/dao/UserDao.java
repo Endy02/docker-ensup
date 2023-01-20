@@ -65,7 +65,7 @@ public class UserDao implements IUserDao{
 
 	//Login
 	public User login(String login, String password) {
-		return jdbcTemplate.queryForObject("Select id,mail,username,address,phone,manager from user where username='"+login+"' and password=PASSWORD('"+password+"')",(resultSet, rowNum) -> {
+		return jdbcTemplate.queryForObject("Select id,mail,username,address,phone,manager from user where username='"+login+"' and password='"+password+"'",(resultSet, rowNum) -> {
 			return new User(resultSet.getInt("id"),resultSet.getString("mail"),resultSet.getString("username"),resultSet.getString("address"),resultSet.getString("phone"),resultSet.getBoolean("manager"));
 		});
 	}
