@@ -1,0 +1,69 @@
+version: "3.8"
+
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb:latest
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=myresto
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3306:3306
+    volumes:
+      - ./database:/var/lib/mysql
+    networks:
+      - local
+  
+  springboot:
+    container_name: springboot
+    build: ./myresto
+    restart: on-failure
+    ports:
+      - 8000:8000
+    volumes:
+      - .m2:/root/.m2
+    depends_on:
+      - mariadb
+    networks:
+      - local
+    stdin_open: true
+    tty: true
+
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    restart: on-failure
+    ports:
+    - 80:3000
+    links:
+      - springboot
+    networks:
+      - local
+    stdin_open: true
+    tty: true
+
+  #Phpmyadmin
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    depends_on:
+      - mariadb
+    ports:
+      - 8088:80
+    environment:
+      - PMA_HOST=mariadb
+      - MYSQL_USERNAME=root
+      - MYSQL_ROOT_PASSWORD=root
+    restart: always
+    networks:
+      - local
+
+networks:
+  local:
+    driver: bridge
+    name: LocalNetwork
