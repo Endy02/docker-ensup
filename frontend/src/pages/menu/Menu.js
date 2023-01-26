@@ -3,7 +3,7 @@ import BannerMenu from './BannerMenu'
 import { motion } from 'framer-motion'
 import axiosProvider from '../../core/axios';
 
-const LOGIN_URL = 'products';
+const MENU_URL = 'products';
 
 const Menu = () => {
   const [click, setClick] = useState(false);
@@ -18,7 +18,7 @@ const Menu = () => {
     document.title = "Menu" // Set the title of the page
     try {
       async function fetchApi(){
-        const response = await axiosProvider.get(LOGIN_URL)
+        const response = await axiosProvider.get(MENU_URL)
         console.log(response)
         setProducts(response.data)
       }
@@ -37,14 +37,14 @@ const Menu = () => {
   }
   }, [errMsg])
 
-  const ProdcutModal = () => {
+  const ProdcutModal = ({ name, price }) => {
     return(
       <>
         <div className='basic-modal-wrapper'>
           <motion.div className='basic-modal-filter' initial={{opacity: 0}} animate={{opacity:.85}}></motion.div>
           <motion.div className='basic-modal' initial={{opacity: 0}} animate={{opacity:1}} onClick={handleClick}>
             <div className='basic-modal-unit'>
-              <p className='large-text bold-text white-text'>9,00 €</p>
+              <p className='large-text bold-text white-text'>{price} €</p>
             </div>
             <div className='basic-modal-content'>
               <div className='gutter'>
@@ -54,7 +54,7 @@ const Menu = () => {
                   </div>
                   <div className='grid-item'>
                     <div className='flex-col'>
-                      <h3 className='medium-text bold-text black-text pad-b-m'>Peachy Burger</h3>
+                      <h3 className='medium-text bold-text black-text pad-b-m'>{name}</h3>
                       <p className='medium-text regular-text black-text'>Ce burger est fait pour les amoureux de la viande et du hamburger maison, avec ses oignons et son bacon grillé, il vous fera salivé grâce a ses cornichons et ça sauce maison.</p>
                     </div>
                   </div>
@@ -69,7 +69,6 @@ const Menu = () => {
 
   return (
     <>
-    {click === true ? <ProdcutModal /> : null}
       <div className='container'>
         <BannerMenu />
       </div>
@@ -94,10 +93,11 @@ const Menu = () => {
                   <div className='grid-4'>
                     {/* TODO : Map All Burgers  */}
                     {products.map((product) => {
+                      {click === true ? <ProdcutModal name={product.name} price={product.price} /> : null}
                       return(
                         <div className='grid-item'>
                           <div className='d-card'>
-                            <div className='d-card-header' onClick={e => {handleClick(e)}}>
+                            <div className='d-card-header' onClick={e => {handleClick(e, product.name)}}>
                                 <img className='img-cover' src={require('../../images/burgercamere.jpg')} alt="Image1" />
                             </div>
                             <div className='d-card-content'>

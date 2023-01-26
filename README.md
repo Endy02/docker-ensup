@@ -1,72 +1,96 @@
-# docker-ensup
-React app with JAVA Spring Boogt, JAVA Data JPA
+# MyResto
 
-## Available Scripts
+Application web permettant de gérer les commandes des clients dévellopper grâce à [Java Spring Boot](https://laravel.com/docs/9.x) et [ReactJs](https://fr.reactjs.org/docs/getting-started.html)
 
-Start Docker :
-> docker-compose up -d
+---
 
-In the project directory, you can run:
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost](http://localhost) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :palm_tree: Caractéristiques
 
-### `npm test`
+| Technology | Description | Front-End | Back-End |
+| --- | --- | ---| --- |
+| Java Spring Boot | Java Spring Boot (Spring Boot) est un outil JAVA, permettant de rendre le dévelloppement d'application web et de microservice plus rapidement et facilement. | | X |
+| React | Framework JavaScript permettant la gestion de l'interface utilisateur | X |  |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## :star2: Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Avant de lancer les conteneurs Docker, assurez-vous d'avoir une configuration correct :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Description | Link |
+| --- | --- |
+| Docker Linux | <https://docs.docker.com/engine/install/ubuntu/> |
+| Docker Windows | <https://docs.docker.com/desktop/install/windows-install/> |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+###### Etapes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Cloner le dépôt :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://gitlab.com/f885/woryu.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Aller dans le dossier :
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```shell
+cd woryu
+```
 
-## Learn More
+3. Lancer les conteneurs :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```shell
+docker-compose up -d
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Check if it's working !!
 
-### Code Splitting
+```shell
+docker ps
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Docker](./assets/capture.png)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## :link: Liens des conteneurs
 
-### Making a Progressive Web App
+| Container  | Liens |
+| --- | --- |
+| Laravel App (Local) | <http://localhost> |
+| PhpMyAdmin (Local) | <http://localhost:8080> |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## :kimono: Contributeurs
+> In progress
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- <table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/1500684?v=3?s=100" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=kentcdodds" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Akentcdodds" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>
+      <td align="center"><a href="https://github.com/jfmengels"><img src="https://avatars.githubusercontent.com/u/3869412?v=3?s=100" width="100px;" alt="Jeroen Engels"/><br /><sub><b>Jeroen Engels</b></sub></a><br /><a href="https://github.com/all-contributors/all-contributors/commits?author=jfmengels" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Ajfmengels" title="Reviewed Pull Requests">👀</a> <a href="#tool-jfmengels" title="Tools">🔧</a></td>
+    </tr>
+    
+  </tbody>
+</table> -->
 
-### Deployment
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## :pencil: License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

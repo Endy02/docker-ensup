@@ -41,10 +41,9 @@ const Login = () => {
             if (!err?.response) {
                 setErrMsg('No Server Response')
             } else if (err.response?.status === 500) {
-                navigate('/register', {state:{prevUrl: location.pathname}})
                 setErrMsg('Missing username or Password');
             } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized')
+                setErrMsg('Missing username or Password');
             } else {
                 setErrMsg('Login Failed')
             }
